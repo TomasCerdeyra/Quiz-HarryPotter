@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(assets/FondoMapaMereora.jpg);
+    background-size: contain;
+    background-size: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/*contendeor general*/
+#contGeneral{
+    background-color:#121107bc;
+    width: 50rem;
+    padding:4rem;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgb(239, 200, 26);
+}
+
+h1{
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    padding: 2px 0;
+    margin: 0 0 10px 0;
+}
+/*Empieza niveles*/
+#contenedorNiveles{
+    display: flex;
+    flex-direction: column;
+    
+}
+.niveles{
+    background-color: rgb(180, 126, 41);
+    color: white;
+    width: 25rem;
+    height: 60px;
+    font-size: 22px;
+    border-radius: .3rem;
+    padding: 10px 20px;
+    margin: 10px 40px 10px;
+    outline: 0;
+}
+#nivel1{
+    margin-top: 40px;
+}
+#nivel3{
+    margin-bottom: 40px;
+}
+
+/*Termina niveles*/
+
+/*Preguntas*/
+#pregunta{
+    background-color: #887a01a6;
+    padding: 1rem;
+    width: 110%;
+    height: 100%;
+    margin: 25px 0 25px 0;
+    color: #000000c5;
+    font-size: 1.7rem;
+    display: none;
+}
+/*Termina Preguntas*/
+
+/*Empiza botones de opcioens*/
+.boton{
+    background-color: white;
+    color: black;
+    width: 30rem;
+    font-size: 20px;
+    border-radius: .3rem;
+    padding: 10px 20px;
+    margin: 10px 40px 10px;
+    outline: 0;
+}
+
+.boton:hover{
+    cursor: pointer;
+    background-color: rgb(149, 161, 23);
+}
+/*Termina botones de opcioens*/
+
+/*Empiza boton para pasar a la siguietne pregunta*/
+.botonSiguiente{
+    background-color: #f1b672;
+    color: white;
+    width: 250px;
+    font-size: 25px;
+    border-radius: .3rem;
+    padding: 10px 20px;
+    margin: 45px 40px 10px;
+    outline: 0;
+    display: none;
+}
+/*Empiza boton para pasar a la siguietne pregunta*/
+
+.contadorPreguntas{
+    font-size: 1.5rem;
+    /*background-color: aqua;*/
+    height: 5rem;
+    width: 30rem;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+/*Puntajes */
+.puntaje{
+    margin: 15px 0 0px 0;
+    font-size: 1.3rem;
+}
+
+.PrimerPuntaje{
+    margin-top: 15px;
+    font-size: 25px;
+}
+/* Termina Puntajes */
