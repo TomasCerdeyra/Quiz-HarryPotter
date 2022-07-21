@@ -192,7 +192,7 @@ class Preguntas{
     preguntaCorrecta(opcion) {
         console.log(opcion);
         if (opcion === this.verdadera) {
-            contadorPuntos++;
+            contadorPuntos+=10;
             console.log(contadorPuntos);
         }
         //retorno el valor del contador
@@ -246,6 +246,7 @@ soundAmb.autoplay = "true"
 soundAmb.loop = -1
 soundAmb.volume= 0.05;
 soundAmb.play();
+
 
 //Barra de sonido
 const audio = document.getElementById("audio");
