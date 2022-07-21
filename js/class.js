@@ -158,12 +158,14 @@ class Preguntas{
                 width:"38em",
                 heightAuto:false,
             });
+            sonud.play();
         }
     }
     //Modulo para decire que cuando es correta pinte de verde y si no de rojo
     PintarOpcionElegida(opcion, boton){
         if(opcion == this.verdadera){
             boton.style.backgroundColor= "rgb(16 137 19)";
+            sound2.play();
         }else{
             boton.style.backgroundColor= "rgb(185 23 14)"
         }
@@ -203,24 +205,82 @@ class Preguntas{
 const preg1 = new Preguntas("¿Como se llama el personaje principal?", ["Harry Potter", "Ron Weasley", "Hermione Granger", "Draco Malfoy"], "Harry Potter");
 const preg2 = new Preguntas("¿A que casa pertenece Hermione Granger en Hogwarts ?", ["Ravenclaw", "Slytherin", "Gryffindor", "Hufflepuff"], "Gryffindor");
 const preg3 = new Preguntas("¿Quienes son los mejores amigos de Harry Potter?", ["Ron y Hermione", "Ron y Draco", "Hagrid y dobby", "Dumbledore y Snape"], "Ron y Hermione");
-const preg4  = new Preguntas("¿Cual es el apodo que los magos tenemen nombrar?",["Dubledore","Snape","Voldemort", "Malfoy"], "Voldemort");
+const preg4  = new Preguntas("¿Cual es el apodo que los magos temen nombrar?",["Dumbledore","Snape","Voldemort", "Malfoy"], "Voldemort");
 const preg5  = new Preguntas("¿Como se llama la mascota de Harry?",["Buckbeak","Trevor","Pigwidgeon", "Hedwing"], "Hedwing");
-const preg6  = new Preguntas("¿Quien es el rival de Harry en su colegio?",["Ron Weasley","Draco Malfoy","neville longbottom", "luna lovegood"], "Draco Malfoy");
+const preg6  = new Preguntas("¿Quien es el rival de Harry en su colegio?",["Ron Weasley","Draco Malfoy","Neville Longbottom", "Luna Lovegood"], "Draco Malfoy");
 
 //Preguntas del nivel 2 = 6
 const preg7 = new Preguntas("¿Cuantos hijos tuvieron Arthur y Molly Weasley?", ["4 (Cuatro)", "8 (Ocho)", "7 (Siete)", "5 (Cinco)"], "7 (Siete)");
 const preg8 = new Preguntas("¿Cual es la principal funcion de la piedra filosofal?", ["Tranformar metal en oro", "Alargar la vida", "Revivir a una persona", "Disparar hechizos"], "Alargar la vida");
-const preg9 = new Preguntas("¿Con que hechizo se habren las cerraduras?", ["Confundo", "Levicorpus", "Alohomora", "Reducto"], "Alohomora");
-const preg10 = new Preguntas("¿Como se llama la mascota de Neville Longbotto?", ["Trevor", "Hedwing", "Crookshanks", "dobby"], "Trevor");
-const preg11 = new Preguntas("¿Que puesto ocupa harry en el equipo quidditch?", ["Golpeador", "Buscador", "Guardián", "Cazador"], "Buscador");
-const preg12 = new Preguntas("¿En que animal se puede tranformal Sirius Black?", ["Lobo", "Gato", "Oso", "El que desee"], "Lobo");
+const preg9 = new Preguntas("¿Con que hechizo se abren las cerraduras?", ["Confundo", "Levicorpus", "Alohomora", "Reducto"], "Alohomora");
+const preg10 = new Preguntas("¿Como se llama la mascota de Neville Longbotto?", ["Trevor", "Hedwing", "Crookshanks", "Dobby"], "Trevor");
+const preg11 = new Preguntas("¿Que puesto ocupa Harry en el equipo Quidditch?", ["Golpeador", "Buscador", "Guardián", "Cazador"], "Buscador");
+const preg12 = new Preguntas("¿En que animal se puede transformar Sirius Black?", ["Lobo", "Gato", "Oso", "El que desee"], "Lobo");
 
 
 //Preguntas del nivel 2 = 7
-const preg13 = new Preguntas("¿Como podes identificar a un Mortifago?", ["Varita diferente", "Marca tenebrosa", "Vestimenta", "Serpieente de mascota"], "Marca tenebrosa");
-const preg14 = new Preguntas("¿Cuantas reliquias de la mueste existen?", ["3 (Tres)", "5 (Cinco)", "7 (Siete)", "2 (Dos)"], "3 (Tres)");
-const preg15 = new Preguntas("¿Quien le da un Giraltiempo a Hermione?", ["Peter Pettigrew", "Luna lovegood", "Albus Dumbledore", "Minerva McGonagall"], "McGonagall");
+const preg13 = new Preguntas("¿Como podes identificar a un Mortifago?", ["Varita diferente", "Marca tenebrosa", "Vestimenta", "Serpiente de mascota"], "Marca tenebrosa");
+const preg14 = new Preguntas("¿Cuantas reliquias de la muerte existen?", ["3 (Tres)", "5 (Cinco)", "7 (Siete)", "2 (Dos)"], "3 (Tres)");
+const preg15 = new Preguntas("¿Quien le da un Giraltiempo a Hermione?", ["Peter Pettigrew", "Luna lovegood", "Albus Dumbledore", "Minerva McGonagall"], "Minerva McGonagall");
 const preg16 = new Preguntas("¿Con que Hechizo se espanta a un Dementor?", ["Expecto Patronum", "Avada Kedavra", "Muffliato", "Petrificus Totalus"], "Expecto Patronum");
 const preg17 = new Preguntas("¿Cuantos Maleficios imperdonables hay?", ["5 (Cinco)", "2 (Dos)", "1 (Uno)", "3 (Tres)"], "3 (Tres)");
 const preg18 = new Preguntas("¿Qué elemento comparten las varitas de Harry y Voldemort?", ["Fibra de corazón de dragón.", "Pelo de unicornio", "Pluma de fénix", "Cuerno de Basilisco"], "Pluma de fénix");
-const preg19 = new Preguntas("¿Que hace el Hechizo imperios?", ["Hace que la victima levite", "Hace que la victima cumpla oredenes", "Lanza fuego", "Te hace invisible"], "Hace que la victima cumpla oredenes");
+const preg19 = new Preguntas("¿Que hace el Hechizo Imperios?", ["Hace que la victima levite", "Hace que la victima cumpla oredenes", "Lanza fuego", "Te hace invisible"], "Hace que la victima cumpla oredenes");
+
+
+//Sonidos
+//Sonido error
+const sonud = new Audio();
+sonud.src = "./sound/error-fallo-1.mp3";
+sonud.volume = 0.03;
+
+//Sonido victoria
+const sound2 = new Audio();
+sound2.src = "./sound/mixkit-melodic-bonus-collect-1938.mp3";
+sonud.volume = 0.03;
+
+//Sonido Ambiental 1
+const soundAmb = new Audio();
+soundAmb.src = "./sound/vin-harry-potter.mp3";
+soundAmb.autoplay = "true"
+soundAmb.loop = -1
+soundAmb.volume= 0.05;
+soundAmb.play();
+
+//Barra de sonido
+const audio = document.getElementById("audio");
+audio.addEventListener("change",()=>{
+    sonud.volume = audio.value;
+    sound2.volume = audio.value;
+    soundAmb.volume= audio.value;
+})
+//icono volumen
+const iconoAudio = document.getElementById("iconoAudio");
+iconoAudio.addEventListener("click",()=>{
+    audio.value=0;
+    sonud.volume = 0;
+    sound2.volume = 0;
+    soundAmb.volume= 0;
+    iconoAudioMut.style.display="block";
+    iconoAudio.style.display="none";
+})
+
+//icono mute
+const iconoAudioMut = document.getElementById("iconoAudioMut")
+iconoAudioMut.style.display="none";
+iconoAudioMut.addEventListener("click", ()=>{
+    audio.value=0.1;
+
+    sonud.volume = audio.value;
+    sound2.volume = audio.value;
+
+    soundAmb.volume= audio.value;
+    soundAmb.play();
+
+    iconoAudio.style.display="block"
+    iconoAudioMut.style.display="none";
+})
+
+
+
+

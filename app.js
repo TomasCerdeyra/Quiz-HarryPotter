@@ -7,10 +7,22 @@ let h1 = document.getElementById("h1");
 //creo el boton volver para poder elegir volver a jugar
 const botonVolver = document.createElement("button");
 
+//agarro al boton y al parrafo de la introduccion
+const botIntro = document.getElementById("BotonIntro");
+const intro = document.getElementById("intro");
+
+//Funcion para mostrar la introduccion y iniciar el juego
+function introduccion() {
+    sacarPonerBotones(displayN);
+    botIntro.addEventListener("click", ()=>{
+        sacarPonerBotones(displayB);
+        botIntro.remove();
+        intro.remove();
+
+    })
+}
 //funcion para volver a la pantalla inicial del juego(menu)
 function BotonVolver() {
-    const puntaje = document.getElementsByClassName("PrimerPuntaje")
-
     botonVolver.innerText= "Volver a Jugar";
     botonVolver.className="botonSiguiente";
     botonVolver.style.display ="block";
@@ -20,7 +32,7 @@ function BotonVolver() {
     botonVolver.addEventListener("click", ()=>{
 
         //Pongo el titulo original
-        h1.innerText = "Caunto sabes de Harry Potter";
+        h1.innerText = "¿Caunto sabes de Harry Potter?";
 
         //saco el mensaje del puntaje
         primerP.innerText= " ";
@@ -39,7 +51,6 @@ function BotonVolver() {
         //Pongo al contador de puntos en 0 para un nuevo juego
         contadorPuntos = 0;
         opcionElegida = " ";
-        console.log(contadorPuntos);
     })
 }
 
@@ -59,6 +70,7 @@ function sacarPonerBotones(param) {
 
 //funcion main
 function main() {
+    introduccion()
     //inicializo la funcion de los niveles
     botonLv1(); 
     botonLv2();
