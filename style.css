@@ -228,7 +228,7 @@ h1 {
 
 
 /*------------------------------Responsive--------------------------------*/
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1660px) {
     #contGeneral {
         height: 40rem;
         width: 48rem;
