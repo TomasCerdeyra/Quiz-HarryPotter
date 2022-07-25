@@ -44,6 +44,8 @@ function BotonVolver() {
 
         //saco el voton
         botonVolver.style.display= "none";
+        //saco a dumbledore
+        animacionE(displayN);
 
         //Le paso la funcion para que se haga un bucle por si el usuario quiere jugar el mismo nivel
         obtenerPreguntas();
@@ -69,10 +71,9 @@ function sacarPonerBotones(param) {
     puntaje2.style.display = (param);
     puntaje3.style.display = (param);
 
-    //Saco las imagenes animadas
+    //Pongo las imagenes animadas
     harry.style.display = (param);
     snitch.style.display = (param);
-    
 }
 
 

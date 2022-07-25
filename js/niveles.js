@@ -36,7 +36,7 @@ function botonLv1(preg11,preg12,preg13,preg14,preg15,preg16) {
         MostrarPaginaInicioNivel();
 
         //Muestro a dumbledor con su mensaje
-        animacionE();
+        animacionE(displayB);
 
         //Muestro la primer pregutna con la pirmeras opciones
         preg11.MostrarPregunta();
@@ -124,7 +124,7 @@ function botonLv2(preg21,preg22,preg23,preg24,preg25,preg26) {
         MostrarPaginaInicioNivel();
 
         //Muestro a dumbledor con su mensaje
-        animacionE();
+        animacionE(displayB);
 
         //Muestro la primer pregutna con la pirmeras opciones
         preg21.MostrarPregunta();
@@ -212,7 +212,7 @@ function botonLv3(preg31,preg32,preg33,preg34,preg35,preg36,preg37) {
         MostrarPaginaInicioNivel();
 
         //Muestro a dumbledor con su mensaje
-        animacionE();
+        animacionE(displayB);
 
         //Muestro la primer pregutna con la pirmeras opciones
         preg31.MostrarPregunta();

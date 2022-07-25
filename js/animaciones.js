@@ -138,10 +138,10 @@ function animacionCyD() {
     }, 2000)
 }
 
-function animacionE() {
-    dumbledore.style.display=("block");
-    mensaje2.style.display=("block");
-    
+//Png dumbledore y mensaje
+function animacionE(param) {
+    dumbledore.style.display=(param);
+    mensaje2.style.display=(param);
 }
 
 
