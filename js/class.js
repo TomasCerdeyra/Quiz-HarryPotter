@@ -51,10 +51,9 @@ class Preguntas {
             //Saco el contador de preg
             contadorPreg.style.display = ("none");
 
-
             //Funciones
             //Declaro el modulo para pintar la opcion elegida
-            this.PintarOpcionElegida(opcionElegida1, boton1);
+            this.PintarOpcionElegida(opcionElegida1, boton1, boton2, boton3, boton4);
 
             //Declaro el modulo para deshabilitar los botones
             this.deshabilitarBotones(boton1, boton2, boton3, boton4)
@@ -79,7 +78,7 @@ class Preguntas {
 
             //Funciones
             //Declaro el modulo para pintar la opcion elegida
-            this.PintarOpcionElegida(opcionElegida2, boton2);
+            this.PintarOpcionElegida(opcionElegida2, boton2, boton1, boton3, boton4);
 
             //Declaro el modulo para deshabilitar los botones
             this.deshabilitarBotones(boton1, boton2, boton3, boton4);
@@ -104,7 +103,7 @@ class Preguntas {
 
             //Funciones
             //Declaro el modulo para pintar la opcion elegida
-            this.PintarOpcionElegida(opcionElegida3, boton3);
+            this.PintarOpcionElegida(opcionElegida3, boton3, boton1, boton2, boton4);
 
             //Declaro el modulo para deshabilitar los botones
             this.deshabilitarBotones(boton1, boton2, boton3, boton4);
@@ -129,7 +128,7 @@ class Preguntas {
 
             //Funciones
             //Declaro la modulo para pintar la opcion elegida
-            this.PintarOpcionElegida(opcionElegida4, boton4);
+            this.PintarOpcionElegida(opcionElegida4, boton4, boton1, boton2, boton3);
 
             //Declaro el modulo para deshabilitar los botones
             this.deshabilitarBotones(boton1, boton2, boton3, boton4);
@@ -167,7 +166,7 @@ class Preguntas {
             boton.style.backgroundColor = "rgb(16 137 19)";
             sound2.play();
         } else {
-            boton.style.backgroundColor = "rgb(185 23 14)"
+            boton.style.backgroundColor = "rgb(185 23 14)";
         }
     }
 
@@ -190,99 +189,47 @@ class Preguntas {
 
     //Con este modulo veo si la respuesta es la correcta y si es asi sumo uno al contador
     preguntaCorrecta(opcion) {
-        console.log(opcion);
         if (opcion === this.verdadera) {
             contadorPuntos += 10;
-            console.log(contadorPuntos);
         }
         //retorno el valor del contador
         return contadorPuntos;
-
     }
 }
 
-//Preguntas del nivel 1 = 6 
-const preg1 = new Preguntas("¿Como se llama el personaje principal?", ["Harry Potter", "Ron Weasley", "Hermione Granger", "Draco Malfoy"], "Harry Potter");
-const preg2 = new Preguntas("¿A que casa pertenece Hermione Granger en Hogwarts ?", ["Ravenclaw", "Slytherin", "Gryffindor", "Hufflepuff"], "Gryffindor");
-const preg3 = new Preguntas("¿Quienes son los mejores amigos de Harry Potter?", ["Ron y Hermione", "Ron y Draco", "Hagrid y dobby", "Dumbledore y Snape"], "Ron y Hermione");
-const preg4 = new Preguntas("¿Cual es el apodo que los magos temen nombrar?", ["Dumbledore", "Snape", "Voldemort", "Malfoy"], "Voldemort");
-const preg5 = new Preguntas("¿Como se llama la mascota de Harry?", ["Buckbeak", "Trevor", "Pigwidgeon", "Hedwing"], "Hedwing");
-const preg6 = new Preguntas("¿Quien es el rival de Harry en su colegio?", ["Ron Weasley", "Draco Malfoy", "Neville Longbottom", "Luna Lovegood"], "Draco Malfoy");
 
-//Preguntas del nivel 2 = 6
-const preg7 = new Preguntas("¿Cuantos hijos tuvieron Arthur y Molly Weasley?", ["4 (Cuatro)", "8 (Ocho)", "7 (Siete)", "5 (Cinco)"], "7 (Siete)");
-const preg8 = new Preguntas("¿Cual es la principal funcion de la piedra filosofal?", ["Tranformar metal en oro", "Alargar la vida", "Revivir a una persona", "Disparar hechizos"], "Alargar la vida");
-const preg9 = new Preguntas("¿Con que hechizo se abren las cerraduras?", ["Confundo", "Levicorpus", "Alohomora", "Reducto"], "Alohomora");
-const preg10 = new Preguntas("¿Como se llama la mascota de Neville Longbotto?", ["Trevor", "Hedwing", "Crookshanks", "Dobby"], "Trevor");
-const preg11 = new Preguntas("¿Que puesto ocupa Harry en el equipo Quidditch?", ["Golpeador", "Buscador", "Guardián", "Cazador"], "Buscador");
-const preg12 = new Preguntas("¿En que animal se puede transformar Sirius Black?", ["Lobo", "Gato", "Oso", "El que desee"], "Lobo");
+async function obtenerPreguntas() {
+    const respuesta = await fetch("preguntas.json");
+    const data = await respuesta.json();
 
+    //pregutnas lv1
+    const preg11 = new Preguntas(data.preg11.pregunta, data.preg11.opciones, data.preg11.verdadera);
+    const preg12 = new Preguntas(data.preg12.pregunta, data.preg12.opciones, data.preg12.verdadera);
+    const preg13 = new Preguntas(data.preg13.pregunta, data.preg13.opciones, data.preg13.verdadera);
+    const preg14 = new Preguntas(data.preg14.pregunta, data.preg14.opciones, data.preg14.verdadera);
+    const preg15 = new Preguntas(data.preg15.pregunta, data.preg15.opciones, data.preg15.verdadera);
+    const preg16 = new Preguntas(data.preg16.pregunta, data.preg16.opciones, data.preg16.verdadera);
+    //pregutnas lv2
+    const preg21 = new Preguntas(data.preg21.pregunta, data.preg21.opciones, data.preg21.verdadera);
+    const preg22 = new Preguntas(data.preg22.pregunta, data.preg22.opciones, data.preg22.verdadera);
+    const preg23 = new Preguntas(data.preg23.pregunta, data.preg23.opciones, data.preg23.verdadera);
+    const preg24 = new Preguntas(data.preg24.pregunta, data.preg24.opciones, data.preg24.verdadera);
+    const preg25 = new Preguntas(data.preg25.pregunta, data.preg25.opciones, data.preg25.verdadera);
+    const preg26 = new Preguntas(data.preg26.pregunta, data.preg26.opciones, data.preg26.verdadera);
+    //pregutnas lv3
+    const preg31 = new Preguntas(data.preg31.pregunta, data.preg31.opciones, data.preg31.verdadera);
+    const preg32 = new Preguntas(data.preg32.pregunta, data.preg32.opciones, data.preg32.verdadera);
+    const preg33 = new Preguntas(data.preg33.pregunta, data.preg33.opciones, data.preg33.verdadera);
+    const preg34 = new Preguntas(data.preg34.pregunta, data.preg34.opciones, data.preg34.verdadera);
+    const preg35 = new Preguntas(data.preg35.pregunta, data.preg35.opciones, data.preg35.verdadera);
+    const preg36 = new Preguntas(data.preg36.pregunta, data.preg36.opciones, data.preg36.verdadera);
+    const preg37 = new Preguntas(data.preg37.pregunta, data.preg37.opciones, data.preg37.verdadera);
 
-//Preguntas del nivel 2 = 7
-const preg13 = new Preguntas("¿Como podes identificar a un Mortifago?", ["Varita diferente", "Marca tenebrosa", "Vestimenta", "Serpiente de mascota"], "Marca tenebrosa");
-const preg14 = new Preguntas("¿Cuantas reliquias de la muerte existen?", ["3 (Tres)", "5 (Cinco)", "7 (Siete)", "2 (Dos)"], "3 (Tres)");
-const preg15 = new Preguntas("¿Quien le da un Giraltiempo a Hermione?", ["Peter Pettigrew", "Luna lovegood", "Albus Dumbledore", "Minerva McGonagall"], "Minerva McGonagall");
-const preg16 = new Preguntas("¿Con que Hechizo se espanta a un Dementor?", ["Expecto Patronum", "Avada Kedavra", "Muffliato", "Petrificus Totalus"], "Expecto Patronum");
-const preg17 = new Preguntas("¿Cuantos Maleficios imperdonables hay?", ["5 (Cinco)", "2 (Dos)", "1 (Uno)", "3 (Tres)"], "3 (Tres)");
-const preg18 = new Preguntas("¿Qué elemento comparten las varitas de Harry y Voldemort?", ["Fibra de corazón de dragón.", "Pelo de unicornio", "Pluma de fénix", "Cuerno de Basilisco"], "Pluma de fénix");
-const preg19 = new Preguntas("¿Que hace el Hechizo Imperios?", ["Hace que la victima levite", "Hace que la victima cumpla oredenes", "Lanza fuego", "Te hace invisible"], "Hace que la victima cumpla oredenes");
-
-
-//Sonidos
-//Sonido error
-const sonud = new Audio();
-sonud.src = "./sound/error-fallo-1.mp3";
-sonud.volume = 0.03;
-
-//Sonido victoria
-const sound2 = new Audio();
-sound2.src = "./sound/mixkit-melodic-bonus-collect-1938.mp3";
-sonud.volume = 0.03;
-
-//Sonido Ambiental 1
-const soundAmb = new Audio();
-
-soundAmb.src = "./sound/vin-harry-potter.mp3";
-soundAmb.autoplay = "true"
-soundAmb.loop = Infinity
-soundAmb.volume = 0.05;
-soundAmb.autoplay = "true"
-soundAmb.play()
-
-//Barra de sonido
-const audio = document.getElementById("audio");
-audio.addEventListener("change", () => {
-    sonud.volume = audio.value;
-    sound2.volume = audio.value;
-    soundAmb.volume = audio.value;
-})
-
-//icono volumen
-const iconoAudio = document.getElementById("iconoAudio");
-iconoAudio.style.display = "none";
-iconoAudio.addEventListener("click", () => {
-    audio.value = 0;
-    sonud.volume = 0;
-    sound2.volume = 0;
-    soundAmb.volume = 0;
-    iconoAudioMut.style.display = "block";
-    iconoAudio.style.display = "none";
-})
-
-//icono mute
-const iconoAudioMut = document.getElementById("iconoAudioMut")
-iconoAudioMut.addEventListener("click", () => {
-    soundAmb.play();
-    audio.value = 0.1;
-
-    sonud.volume = audio.value;
-    sound2.volume = audio.value;
-
-    soundAmb.volume = audio.value;
-
-
-    iconoAudio.style.display = "block"
-    iconoAudioMut.style.display = "none";
-})
-
-
+    //Paso las pregutnas a las funciones 
+    //nvel1
+    botonLv1(preg11,preg12,preg13,preg14,preg15,preg16);
+    //lv2
+    botonLv2(preg21,preg22,preg23,preg24,preg25,preg26);
+    //lv3
+    botonLv3(preg31,preg32,preg33,preg34,preg35,preg36,preg37);
+}

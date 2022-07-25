@@ -1,0 +1,108 @@
+{
+    "preg11":{
+        "pregunta": "¿Como se llama el personaje principal?", 
+        "opciones": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Draco Malfoy"],
+        "verdadera": "Harry Potter"
+    },
+    "preg12": {
+        "pregunta": "¿A que casa pertenece Hermione Granger en Hogwarts?", 
+        "opciones": ["Ravenclaw", "Slytherin", "Gryffindor", "Hufflepuff"],
+        "verdadera": "Gryffindor"
+    },
+    "preg13":{
+        "pregunta": "¿Quienes son los mejores amigos de Harry Potter?", 
+        "opciones": ["Ron y Hermione", "Ron y Draco", "Hagrid y dobby", "Dumbledore y Snape"],
+        "verdadera": "Ron y Hermione"
+    },
+    "preg14":{
+        "pregunta": "¿Cual es el apodo que los magos temen nombrar?",
+        "opciones": ["Dumbledore", "Snape", "Voldemort", "Malfoy"],
+        "verdadera": "Voldemort"
+    },
+    "preg15":{
+        "pregunta": "¿Como se llama la mascota de Harry?", 
+        "opciones": ["Buckbeak", "Trevor", "Pigwidgeon", "Hedwing"],
+        "verdadera": "Hedwing"
+    },
+    "preg16":{
+        "pregunta": "¿Quien es el rival de Harry en su colegio?", 
+        "opciones": ["Ron Weasley", "Draco Malfoy", "Neville Longbottom", "Luna Lovegood"],
+        "verdadera": "Draco Malfoy"
+    },
+
+    "preg21":{
+        "pregunta": "¿Cuantos hijos tuvieron Arthur y Molly Weasley?", 
+        "opciones": ["4 (Cuatro)", "8 (Ocho)", "7 (Siete)", "5 (Cinco)"],
+        "verdadera": "7 (Siete)"
+    },
+    "preg22":{
+        "pregunta": "¿Cual es la principal funcion de la piedra filosofal?", 
+        "opciones": ["Tranformar metal en oro", "Alargar la vida", "Revivir a una persona", "Disparar hechizos"],
+        "verdadera": "Alargar la vida"
+    },
+    "preg23":{
+        "pregunta": "¿Con que hechizo se abren las cerraduras?",
+        "opciones": ["Confundo", "Levicorpus", "Alohomora", "Reducto"],
+        "verdadera": "Alohomora"
+    },
+    "preg24":{
+        "pregunta": "¿Como se llama la mascota de Neville Longbotto?",
+        "opciones": ["Trevor", "Hedwing", "Crookshanks", "Dobby"],
+        "verdadera": "Trevor"
+    },
+    "preg25":{
+        "pregunta": "¿Que puesto ocupa Harry en el equipo Quidditch?",
+        "opciones": ["Golpeador", "Buscador", "Guardián", "Cazador"],
+        "verdadera": "Buscador"
+    },
+    "preg26":{
+        "pregunta": "¿En que animal se puede transformar Sirius Black?",
+        "opciones": ["Lobo", "Gato", "Oso", "El que desee"],
+        "verdadera": "Lobo"
+    },
+
+
+    "preg31":{
+        "pregunta": "¿Como podes identificar a un Mortifago?",
+        "opciones": ["Varita diferente", "Marca tenebrosa", "Vestimenta", "Serpiente de mascota"],
+        "verdadera": "Marca tenebrosa"
+    },
+
+    "preg32":{
+        "pregunta": "¿Cuantas reliquias de la muerte existen?",
+        "opciones": ["3 (Tres)", "5 (Cinco)", "7 (Siete)", "2 (Dos)"],
+        "verdadera": "3 (Tres)"
+    },
+
+    "preg33":{
+        "pregunta": "¿Quien le da un Giraltiempo a Hermione?",
+        "opciones": ["Peter Pettigrew", "Luna lovegood", "Albus Dumbledore", "Minerva McGonagall"],
+        "verdadera": "Minerva McGonagall"
+    },
+
+    "preg34":{
+        "pregunta": "¿Con que Hechizo se espanta a un Dementor?",
+        "opciones": ["Expecto Patronum", "Avada Kedavra", "Muffliato", "Petrificus Totalus"],
+        "verdadera": "Expecto Patronum"
+    },
+
+    "preg35":{
+        "pregunta": "¿Cuantos Maleficios imperdonables hay?",
+        "opciones": ["5 (Cinco)", "2 (Dos)", "1 (Uno)", "3 (Tres)"],
+        "verdadera": "3 (Tres)"
+    },
+
+    "preg36":{
+        "pregunta": "¿Qué elemento comparten las varitas de Harry y Voldemort?",
+        "opciones": ["Fibra de corazón de dragón.", "Pelo de unicornio", "Pluma de fénix", "Cuerno de Basilisco"],
+        "verdadera": "Pluma de fénix"
+    },
+
+    "preg37":{
+        "pregunta": "¿Que hace el Hechizo Imperios?",
+        "opciones":  ["Hace que la victima levite", "Hace que la victima cumpla oredenes", "Lanza fuego", "Te hace invisible"],
+        "verdadera": "Hace que la victima cumpla oredenes"
+    }
+
+}
+

@@ -30,24 +30,27 @@ const preguntasLv3 = 7;
 //-------------------------------EMPIEZA NIVEL 1---------------------------//
 
 //funncion para elegir el primer nivel
-function botonLv1() {
+function botonLv1(preg11,preg12,preg13,preg14,preg15,preg16) {
     botNivel1.addEventListener("click", () => {
         //inicializo la funcion que me muestra el inicio del juego
         MostrarPaginaInicioNivel();
 
+        //Muestro a dumbledor con su mensaje
+        animacionE();
+
         //Muestro la primer pregutna con la pirmeras opciones
-        preg1.MostrarPregunta();
-        preg1.MostrarOpciones();
+        preg11.MostrarPregunta();
+        preg11.MostrarOpciones();
 
         contadorPreg.innerText= "Pregunta 1 de "+preguntasLv1;
 
         //incicializo la funcion del nivel1 
-        nivel1();
+        nivel1(preg12,preg13,preg14,preg15,preg16);
     });
 }
 
 //Funcion para iniciar juego del nivel1
-function nivel1() {
+function nivel1(preg12,preg13,preg14,preg15,preg16) {
     //variable click para controlas las preguntas que va
     let click = 0;
     let contadorDepregunta = 1;
@@ -66,28 +69,28 @@ function nivel1() {
         contadorPreg.innerText = "Pregunta "+contadorDepregunta +" de: "+preguntasLv1;
 
         //Muestro las preguntas
-        if (click == 1) { preg2.MostrarPregunta(); preg2.MostrarOpciones(); }
-        if (click == 2) { preg3.MostrarPregunta(); preg3.MostrarOpciones(); }
-        if (click == 3) { preg4.MostrarPregunta(); preg4.MostrarOpciones(); }
-        if (click == 4) { preg5.MostrarPregunta(); preg5.MostrarOpciones(); }
-        if (click == 5) { preg6.MostrarPregunta(); preg6.MostrarOpciones(); }
+        if (click == 1) { preg12.MostrarPregunta(); preg12.MostrarOpciones(); }
+        if (click == 2) { preg13.MostrarPregunta(); preg13.MostrarOpciones(); }
+        if (click == 3) { preg14.MostrarPregunta(); preg14.MostrarOpciones(); }
+        if (click == 4) { preg15.MostrarPregunta(); preg15.MostrarOpciones(); }
+        if (click == 5) { preg16.MostrarPregunta(); preg16.MostrarOpciones(); }
 
         
-        nivel1Terminado(click);
+        nivel1Terminado(click, preg16);
     });
 }
 
 //Funcion para mostrar el resultado del nivel1 terminado  
-function nivel1Terminado(click) {
+function nivel1Terminado(click, preg16) {
     if (click == 6) {
         mostrarPaginaResultados();
 
         //Creo el mensaje para mostrar los puntos que hizo
-        primerP.innerText = " Tu puntaje fue de " + preg6.preguntaCorrecta();
+        primerP.innerText = " Tu puntaje fue de " + preg16.preguntaCorrecta();
         click = 0;
 
         //inicializo la funcion para guardar el puntaje en el locaL Storage
-        guardarPuntaje1();
+        guardarPuntaje1(preg16);
 
         //inicializo la funcion para que aparezca un nuevo voton para volver a jugar
         BotonVolver();
@@ -95,9 +98,9 @@ function nivel1Terminado(click) {
 }
 
 //funcio para guardar el puntaje max del nivel3 en local storage
-function guardarPuntaje1() {
+function guardarPuntaje1(preg16) {
     //guardo en locarStore el puntaje
-    localStorage.setItem("Puntaje",  preg6.preguntaCorrecta());
+    localStorage.setItem("Puntaje",  preg16.preguntaCorrecta());
 
     //agarro el ultimo puntaje guardado y lo guardo
     let puntajeLocal = parseInt(localStorage.getItem("Puntaje"));
@@ -114,31 +117,34 @@ function guardarPuntaje1() {
 //-------------------------------EMPIEZA NIVEL 2----------------------------//
 
 //funncion para elegir el segundo nivel
-function botonLv2() {
+function botonLv2(preg21,preg22,preg23,preg24,preg25,preg26) {
     botNivel2.addEventListener("click", () => {
 
         //inicializo la funcion que me muestra el inicio del juego
         MostrarPaginaInicioNivel();
 
+        //Muestro a dumbledor con su mensaje
+        animacionE();
+
         //Muestro la primer pregutna con la pirmeras opciones
-        preg7.MostrarPregunta();
-        preg7.MostrarOpciones();
+        preg21.MostrarPregunta();
+        preg21.MostrarOpciones();
 
         contadorPreg.innerText= "Pregunta 1 de "+preguntasLv2;
 
         //incicializo la funcion del nivel1 
-        nivel2();
+        nivel2(preg22,preg23,preg24,preg25,preg26);
     });
 }
 
 //Funcion para iniciae juego del nivel2
-function nivel2() {
+function nivel2(preg22,preg23,preg24,preg25,preg26) {
     //variable click para controlas las preguntas que va
-    let click = 0;
+    let click2 = 0;
     let contadorDepregunta = 1;
 
     botonSiguiente.addEventListener("click", () => {
-        click++;
+        click2++;
         contadorDepregunta++;
 
         //Saco boton
@@ -148,30 +154,30 @@ function nivel2() {
         contadorPreg.style.display = ("block");
 
         //Muestro la pregunta que va
-        contadorPreg.innerText = "Pregunta "+contadorDepregunta +" de: "+preguntasLv2;
+        contadorPreg.innerText = "Pregunta "+contadorDepregunta +" de "+preguntasLv2;
 
         //Muestro las preguntas
-        if (click == 1) { preg8.MostrarPregunta(); preg8.MostrarOpciones(); }
-        if (click == 2) { preg9.MostrarPregunta(); preg9.MostrarOpciones(); }
-        if (click == 3) { preg10.MostrarPregunta(); preg10.MostrarOpciones(); }
-        if (click == 4) { preg11.MostrarPregunta(); preg11.MostrarOpciones(); }
-        if (click == 5) { preg12.MostrarPregunta(); preg12.MostrarOpciones(); }
+        if (click2 == 1) { preg22.MostrarPregunta(); preg22.MostrarOpciones(); }
+        if (click2 == 2) { preg23.MostrarPregunta(); preg23.MostrarOpciones(); }
+        if (click2 == 3) { preg24.MostrarPregunta(); preg24.MostrarOpciones(); }
+        if (click2 == 4) { preg25.MostrarPregunta(); preg25.MostrarOpciones(); }
+        if (click2 == 5) { preg26.MostrarPregunta(); preg26.MostrarOpciones(); }
 
-        nivel2Terminado(click);
+        nivel2Terminado(click2, preg26);
     });
 }
 
 //Funcion para mostrar el resultado del nivel2 terminado  
-function nivel2Terminado(click) {
-    if (click == 6) {
+function nivel2Terminado(click2,preg26) {
+    if (click2 == 6) {
         mostrarPaginaResultados();
 
         //Creo el mensaje para mostrar los puntos que hizo
-        primerP.innerText = " Tu puntaje fue de " + preg12.preguntaCorrecta();
-        click = 0;
+        primerP.innerText = " Tu puntaje fue de " + preg26.preguntaCorrecta();
+        click2 = 0;
 
         //inicializo la funcion para guardar el puntaje en el locaL Storage
-        guardarPuntaje2();
+        guardarPuntaje2(preg26);
 
         //inicializo la funcion para que aparezca un nuevo voton para volver a jugar
         BotonVolver();
@@ -179,9 +185,9 @@ function nivel2Terminado(click) {
 }
 
 //funcio para guardar el puntaje max del nivel2 en local storage
-function guardarPuntaje2() {
+function guardarPuntaje2(preg26) {
     //guardo en locarStore el puntaje
-    localStorage.setItem("Puntaje",  preg12.preguntaCorrecta());
+    localStorage.setItem("Puntaje",  preg26.preguntaCorrecta());
 
     //agarro el ultimo puntaje guardado y lo guardo
     let puntajeLocal = parseInt(localStorage.getItem("Puntaje"));
@@ -199,31 +205,34 @@ function guardarPuntaje2() {
 //-------------------------------EMPIEZA NIVEL 3----------------------------//
 
 //funncion para elegir el tercer nivel
-function botonLv3() {
+function botonLv3(preg31,preg32,preg33,preg34,preg35,preg36,preg37) {
     botNivel3.addEventListener("click", () => {
 
         //inicializo la funcion que me muestra el inicio del juego
         MostrarPaginaInicioNivel();
 
+        //Muestro a dumbledor con su mensaje
+        animacionE();
+
         //Muestro la primer pregutna con la pirmeras opciones
-        preg13.MostrarPregunta();
-        preg13.MostrarOpciones();
+        preg31.MostrarPregunta();
+        preg31.MostrarOpciones();
 
         contadorPreg.innerText= "Pregunta 1 de "+preguntasLv3;
 
         //incicializo la funcion del nivel1 
-        nivel3();
+        nivel3(preg32,preg33,preg34,preg35,preg36,preg37);
     });
 }
 
 //Funcion para iniciae juego del nivel3
-function nivel3() {
+function nivel3(preg32,preg33,preg34,preg35,preg36,preg37) {
     //variable click para controlas las preguntas que va
-    let click = 0;
+    let click3 = 0;
     let contadorDepregunta = 1;
 
     botonSiguiente.addEventListener("click", () => {
-        click++;
+        click3++;
         contadorDepregunta++;
 
         //saco boton
@@ -233,31 +242,32 @@ function nivel3() {
         contadorPreg.style.display = ("block");
 
         //Muestro la pregunta que va
-        contadorPreg.innerText = "Pregunta "+contadorDepregunta +" de: "+preguntasLv3;
+        contadorPreg.innerText = "Pregunta "+contadorDepregunta +" de "+preguntasLv3;
 
         //Muestro las preguntas
-        if (click == 1) { preg14.MostrarPregunta(); preg14.MostrarOpciones(); }
-        if (click == 2) { preg15.MostrarPregunta(); preg15.MostrarOpciones(); }
-        if (click == 3) { preg16.MostrarPregunta(); preg16.MostrarOpciones(); }
-        if (click == 4) { preg17.MostrarPregunta(); preg17.MostrarOpciones(); }
-        if (click == 5) { preg18.MostrarPregunta(); preg18.MostrarOpciones(); }
-        if (click == 6) { preg19.MostrarPregunta(); preg19.MostrarOpciones(); }
+        if (click3 == 1) { preg32.MostrarPregunta(); preg32.MostrarOpciones(); }
+        if (click3 == 2) { preg33.MostrarPregunta(); preg33.MostrarOpciones(); }
+        if (click3 == 3) { preg34.MostrarPregunta(); preg34.MostrarOpciones(); }
+        if (click3 == 4) { preg35.MostrarPregunta(); preg35.MostrarOpciones(); }
+        if (click3 == 5) { preg36.MostrarPregunta(); preg36.MostrarOpciones(); }
+        if (click3 == 6) { preg37.MostrarPregunta(); preg37.MostrarOpciones(); }
 
-        nivel3Terminado(click);
+        nivel3Terminado(click3,preg37);
     });
 }
 
+
 //Funcion para mostrar el resultado del nivel3 terminado 
-function nivel3Terminado(click) {
-    if (click == 7) {
+function nivel3Terminado(click3,preg37) {
+    if (click3 == 7) {
         mostrarPaginaResultados();
 
         //Creo el mensaje para mostrar los puntos que hizo
-        primerP.innerText = " Tu puntaje fue de " + preg19.preguntaCorrecta();
-        click = 0;
+        primerP.innerText = " Tu puntaje fue de " + preg37.preguntaCorrecta();
+        click3 = 0;
 
         //inicializo la funcion para guardar el puntaje en el locaL Storage
-        guardarPuntaje3();
+        guardarPuntaje3(preg37);
 
         //inicializo la funcion para que aparezca un nuevo voton para volver a jugar
         BotonVolver();
@@ -265,9 +275,9 @@ function nivel3Terminado(click) {
 }
 
 //funcio para guardar el puntaje max del nivel3 en local storage
-function guardarPuntaje3() {
+function guardarPuntaje3(preg37) {
     //guardo en locarStore el puntaje
-    localStorage.setItem("Puntaje",  preg19.preguntaCorrecta());
+    localStorage.setItem("Puntaje",  preg37.preguntaCorrecta());
 
     //agarro el ultimo puntaje guardado y lo guardo
     let puntajeLocal = parseInt(localStorage.getItem("Puntaje"));
@@ -283,6 +293,7 @@ function guardarPuntaje3() {
 //-------------------------------TERMINA NIVEL 3----------------------------//
 
 
+//Funciones Globales
 //Funcion para sacar las preguntas y opciones y mmostrar el resultado del juego
 function mostrarPaginaResultados() {
 
@@ -300,7 +311,6 @@ function mostrarPaginaResultados() {
 
     //saco el botonSiguiente
     botonSiguiente.style.display = "none";
-
 }
 
 //Funcion para poner las preguntas, opciones y sacar los puntajes maximos

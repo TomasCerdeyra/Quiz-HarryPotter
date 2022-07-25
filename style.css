@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -13,7 +14,8 @@ body {
     height: 100vh;
 }
 
-/*contendeor general*/
+/*contendeor general
+/////////////////////*/
 #contGeneral {
     background-color: #121107bc;
     width: 50rem;
@@ -44,7 +46,8 @@ h1 {
     margin: 0 0 10px 0;
 }
 
-/*Empieza introduccion*/
+/*Empieza introduccion
+///////////////////////*/
 .intro {
     background-color: #0000006a;
     margin: 5% 0 5% 0;
@@ -72,7 +75,8 @@ h1 {
 
 /*Terminaa introduccion*/
 
-/*Empieza niveles*/
+/*Empieza niveles
+//////////////////*/
 #contenedorNiveles {
     display: flex;
     flex-direction: column;
@@ -100,7 +104,8 @@ h1 {
 
 /*Termina niveles*/
 
-/*Preguntas*/
+/*Preguntas
+////////////*/
 #pregunta {
     background-color: #887a01a6;
     padding: 1rem;
@@ -115,7 +120,8 @@ h1 {
 
 /*Termina Preguntas*/
 
-/*Empiza botones de opcioens*/
+/*Empiza botones de opcioens
+/////////////////////////////*/
 .boton {
     background-color: white;
     color: black;
@@ -135,7 +141,8 @@ h1 {
 
 /*Termina botones de opcioens*/
 
-/*Empiza boton para pasar a la siguietne pregunta*/
+/*Empiza boton para pasar a la siguietne pregunta
+///////////////////////////////////////////////////*/
 .botonSiguiente {
     background-color: #f1b672;
     color: white;
@@ -148,7 +155,8 @@ h1 {
     display: none;
 }
 
-/*Empiza boton para pasar a la siguietne pregunta*/
+/*Empiza boton para pasar a la siguietne pregunta
+//////////////////////////////////////////////////*/
 
 .contadorPreguntas {
     font-size: 1.5rem;
@@ -161,7 +169,8 @@ h1 {
     display: none;
 }
 
-/*Puntajes */
+/*Puntajes
+//////////// */
 .puntaje {
     margin: 15px 0 0px 0;
     font-size: 1.3rem;
@@ -174,7 +183,8 @@ h1 {
 
 /* Termina Puntajes */
 
-/*Empieza Audio*/
+/*Empieza Audio
+////////////////*/
 .ContenedroAudio {
     position: absolute;
     padding: 20px;
@@ -215,13 +225,60 @@ h1 {
     box-shadow: 0px 1px 10px 1px black;
 }
 
-/*Boton de la barra*/
+/*Boton de la barra
+////////////////////*/
 #audio::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 20px;
     height: 20px;
     background: rgb(117, 103, 77);
     border-radius: 50%;
+}
+
+/*Animaciones e imagenes
+////////////////////////*/
+.dumbledore{
+    position: absolute;
+    width: 5%;
+    top: 60%;
+    left: 18%;
+    display: none;
+}
+.divDumbledore{
+    position: absolute;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width:15rem;
+    height: 6rem;
+    padding: 15px;
+    border-radius: 50%;
+    top: 48%;
+    left: 20%;
+    z-index: 1;
+    font-weight: 600;
+    box-shadow: 0 0 15px rgb(239, 200, 26);
+    display: none;
+}
+
+.divDumbledore::before{
+    position: absolute;
+    left: 10px;
+    top: -5px;
+    z-index: -1;
+    content: "";
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 100%;
+    color: white;
+    -moz-box-shadow: 10px 10px 0 #ffffff;
+    -webkit-box-shadow: 30px 10px 0 #ffffff;
+    box-shadow: 30px 10px 0 #ffffff;
 }
 
 .harry{
@@ -233,9 +290,58 @@ h1 {
     z-index: -1;
     /*transform:translate(50%, 50%)0;*/
 }
-.box {
+.harry2{
+    width: 10%;
+    top: 70%;
+    left: 70%;
+    position: absolute;
     display: block;
-    color: red;
+    z-index: -1;
+}
+.snitch{
+    width: 3%;
+    position: absolute;
+    top: 13%;
+    left: 9%;
+    display: block;
+    z-index: -2;
+
+}
+.divAnimacion{
+    position: absolute;
+    padding: 25px;
+    background-color: white;
+    text-align: center;
+    color: black;
+    width:15rem;
+    height: 6rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .9rem;
+    font-weight: 600;
+    box-shadow: 0 0 15px rgb(239, 200, 26);
+    top: 65%;
+    right: 11%;
+    display: none;
+}
+
+.divAnimacion::before{
+    position: absolute;
+    left: 10px;
+    top: -5px;
+    z-index: -5;
+    content: "";
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 100%;
+    color: white;
+    -moz-box-shadow: 10px 10px 0 #ffffff;
+    -webkit-box-shadow: 30px 10px 0 #ffffff;
+    box-shadow: 30px 10px 0 #ffffff;
 }
 
 
@@ -322,7 +428,45 @@ h1 {
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1400px) {
+
+    .harry2{
+        width: 10%;
+        top: 74%;
+        left: 70%;
+    }
+
+    .divAnimacion{
+        padding: 15px;
+        width:12rem;
+        height: 6rem;
+        font-size: .9rem;
+        font-weight: 600;
+        top: 65%;
+        right: 8%;
+    }
+
+    .dumbledore{
+        left: 10%;
+    }
+
+    .divDumbledore{
+        width:14rem;
+        height: 6rem;
+        padding: 12px;
+        border-radius: 50%;
+        top: 48%;
+        left: 7%;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .harry2{
+        display: none;
+    }
+    .divAnimacion{
+        display: none !important;
+    }
     #contGeneral {
         width: 43rem;
         height: auto;

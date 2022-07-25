@@ -6,12 +6,12 @@ const footer = document.getElementById("Footer");
 let h1 = document.getElementById("h1");
 //creo el boton volver para poder elegir volver a jugar
 const botonVolver = document.createElement("button");
-
-//agarro al boton y al parrafo de la introduccion
+//Boton e div de la intro
 const botIntro = document.getElementById("BotonIntro");
 const intro = document.getElementById("intro");
 
 //Funcion para mostrar la introduccion y iniciar el juego
+
 function introduccion() {
     sacarPonerBotones(displayN);
     botIntro.addEventListener("click", ()=>{
@@ -19,6 +19,8 @@ function introduccion() {
         botIntro.remove();
         intro.remove();
 
+        //animacion AyB
+        animacionAyB();
     })
 }
 //funcion para volver a la pantalla inicial del juego(menu)
@@ -43,10 +45,11 @@ function BotonVolver() {
         //saco el voton
         botonVolver.style.display= "none";
 
-        //le paso la funcion para que se haga un bucle por si el usuario quiere jugar el mismo nivel
-        botonLv1();
-        botonLv2();
-        botonLv3();
+        //Le paso la funcion para que se haga un bucle por si el usuario quiere jugar el mismo nivel
+        obtenerPreguntas();
+        //botonLv1();
+        //botonLv2();
+        //botonLv3();
 
         //Pongo al contador de puntos en 0 para un nuevo juego
         contadorPuntos = 0;
@@ -65,16 +68,21 @@ function sacarPonerBotones(param) {
     puntaje1.style.display = (param);
     puntaje2.style.display = (param);
     puntaje3.style.display = (param);
+
+    //Saco las imagenes animadas
+    harry.style.display = (param);
+    snitch.style.display = (param);
     
 }
 
-//funcion main
+
 function main() {
-    introduccion()
-    //inicializo la funcion de los niveles
-    botonLv1(); 
-    botonLv2();
-    botonLv3();
+    //intro
+    introduccion();
+    //juego
+    obtenerPreguntas();
+    //Animacion de mensaje 
+    animacionCyD();
 }
 main();
 
