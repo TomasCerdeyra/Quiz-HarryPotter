@@ -1,4 +1,3 @@
-
 //VARIABLES
 //footer contenedor
 const footer = document.getElementById("Footer");
@@ -86,24 +85,3 @@ function main() {
     animacionCyD();
 }
 main();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

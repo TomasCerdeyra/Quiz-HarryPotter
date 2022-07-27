@@ -143,7 +143,3 @@ function animacionE(param) {
     dumbledore.style.display=(param);
     mensaje2.style.display=(param);
 }
-
-
-
-

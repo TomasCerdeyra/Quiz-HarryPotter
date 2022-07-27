@@ -24,7 +24,7 @@ let puntajeMax2 = -1000;
 let puntajeMax3 = -1000;
 const preguntasLv1 = 6;
 const preguntasLv2 = 6;
-const preguntasLv3 = 7;
+const preguntasLv3 = 9;
 
 
 //-------------------------------EMPIEZA NIVEL 1---------------------------//
@@ -94,13 +94,16 @@ function nivel1Terminado(click, preg16) {
 
         //inicializo la funcion para que aparezca un nuevo voton para volver a jugar
         BotonVolver();
+
+        //Saco a dumbledore
+        animacionE(displayN)
     }
 }
 
 //funcio para guardar el puntaje max del nivel3 en local storage
 function guardarPuntaje1(preg16) {
     //guardo en locarStore el puntaje
-    localStorage.setItem("Puntaje",  preg16.preguntaCorrecta());
+    storage = localStorage.setItem("Puntaje",  preg16.preguntaCorrecta());
 
     //agarro el ultimo puntaje guardado y lo guardo
     let puntajeLocal = parseInt(localStorage.getItem("Puntaje"));
@@ -111,6 +114,7 @@ function guardarPuntaje1(preg16) {
     //inicializo funcion  mostrarmax pasandole el parametro puntajemax
     puntaje1.innerText ="Tu mayor puntaje nivel Basico: "+puntajeMax1+" pts"
 }
+
 //-------------------------------TERMINA NIVEL 1----------------------------//
 
 
@@ -181,6 +185,9 @@ function nivel2Terminado(click2,preg26) {
 
         //inicializo la funcion para que aparezca un nuevo voton para volver a jugar
         BotonVolver();
+
+        //Saco a dumbledore
+        animacionE(displayN)
     }
 }
 
@@ -205,7 +212,7 @@ function guardarPuntaje2(preg26) {
 //-------------------------------EMPIEZA NIVEL 3----------------------------//
 
 //funncion para elegir el tercer nivel
-function botonLv3(preg31,preg32,preg33,preg34,preg35,preg36,preg37) {
+function botonLv3(preg31,preg32,preg33,preg34,preg35,preg36,preg37,preg38,preg39) {
     botNivel3.addEventListener("click", () => {
 
         //inicializo la funcion que me muestra el inicio del juego
@@ -221,12 +228,12 @@ function botonLv3(preg31,preg32,preg33,preg34,preg35,preg36,preg37) {
         contadorPreg.innerText= "Pregunta 1 de "+preguntasLv3;
 
         //incicializo la funcion del nivel1 
-        nivel3(preg32,preg33,preg34,preg35,preg36,preg37);
+        nivel3(preg32,preg33,preg34,preg35,preg36,preg37,preg38,preg39);
     });
 }
 
 //Funcion para iniciae juego del nivel3
-function nivel3(preg32,preg33,preg34,preg35,preg36,preg37) {
+function nivel3(preg32,preg33,preg34,preg35,preg36,preg37,preg38,preg39) {
     //variable click para controlas las preguntas que va
     let click3 = 0;
     let contadorDepregunta = 1;
@@ -251,33 +258,38 @@ function nivel3(preg32,preg33,preg34,preg35,preg36,preg37) {
         if (click3 == 4) { preg35.MostrarPregunta(); preg35.MostrarOpciones(); }
         if (click3 == 5) { preg36.MostrarPregunta(); preg36.MostrarOpciones(); }
         if (click3 == 6) { preg37.MostrarPregunta(); preg37.MostrarOpciones(); }
+        if (click3 == 7) { preg38.MostrarPregunta(); preg38.MostrarOpciones(); }
+        if (click3 == 8) { preg39.MostrarPregunta(); preg39.MostrarOpciones(); }
 
-        nivel3Terminado(click3,preg37);
+        nivel3Terminado(click3,preg39);
     });
 }
 
 
 //Funcion para mostrar el resultado del nivel3 terminado 
-function nivel3Terminado(click3,preg37) {
-    if (click3 == 7) {
+function nivel3Terminado(click3,preg39) {
+    if (click3 == 9) {
         mostrarPaginaResultados();
 
         //Creo el mensaje para mostrar los puntos que hizo
-        primerP.innerText = " Tu puntaje fue de " + preg37.preguntaCorrecta();
+        primerP.innerText = " Tu puntaje fue de " + preg39.preguntaCorrecta();
         click3 = 0;
 
         //inicializo la funcion para guardar el puntaje en el locaL Storage
-        guardarPuntaje3(preg37);
+        guardarPuntaje3(preg39);
 
         //inicializo la funcion para que aparezca un nuevo voton para volver a jugar
         BotonVolver();
+
+        //Saco a dumbledore
+        animacionE(displayN)
     }
 }
 
 //funcio para guardar el puntaje max del nivel3 en local storage
-function guardarPuntaje3(preg37) {
+function guardarPuntaje3(preg39) {
     //guardo en locarStore el puntaje
-    localStorage.setItem("Puntaje",  preg37.preguntaCorrecta());
+    localStorage.setItem("Puntaje",  preg39.preguntaCorrecta());
 
     //agarro el ultimo puntaje guardado y lo guardo
     let puntajeLocal = parseInt(localStorage.getItem("Puntaje"));
@@ -289,11 +301,10 @@ function guardarPuntaje3(preg37) {
     puntaje3.innerText ="Tu mayor puntaje nivel Experto: "+puntajeMax3+" pts"
 }
 
-
 //-------------------------------TERMINA NIVEL 3----------------------------//
 
 
-//Funciones Globales
+//Funciones Globales para niveles
 //Funcion para sacar las preguntas y opciones y mmostrar el resultado del juego
 function mostrarPaginaResultados() {
 
@@ -323,7 +334,4 @@ function MostrarPaginaInicioNivel() {
 
     //mostrar el contador
     contadorPreg.style.display = ("block")
-    //botonSiguiente.style.display = ("block");
-
-
 }

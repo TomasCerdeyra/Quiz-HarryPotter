@@ -102,7 +102,20 @@
         "pregunta": "¿Que hace el Hechizo Imperios?",
         "opciones":  ["Hace que la victima levite", "Hace que la victima cumpla oredenes", "Lanza fuego", "Te hace invisible"],
         "verdadera": "Hace que la victima cumpla oredenes"
+    },
+
+    "preg38":{
+        "pregunta": "¿Cuantos horrocruxes hizo voldemort?",
+        "opciones":  ["2 (Dos)", "3 (Tres)", "20 (Veinte)", "6 (Seis)"],
+        "verdadera": "6 (Seis)"
+    },
+
+    "preg39":{
+        "pregunta": "¿Cuál es el Patronus de Luna Lovegood?",
+        "opciones":  ["Una liebre", "Un gato", "Una serpiente", "Un leon"],
+        "verdadera": "Una liebre"
     }
+
 
 }
 

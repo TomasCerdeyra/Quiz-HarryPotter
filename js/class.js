@@ -162,17 +162,16 @@ class Preguntas {
     }
     //Modulo para decire que cuando es correta pinte de verde y si no de rojo
     PintarOpcionElegida(opcion, boton) {
-        if (opcion == this.verdadera) {
+        if (opcion == this.verdadera){
+            sound2.play() 
             boton.style.backgroundColor = "rgb(16 137 19)";
-            sound2.play();
-        } else {
+        }else{
             boton.style.backgroundColor = "rgb(185 23 14)";
         }
     }
 
     //Modulo para deshabilitar botones
     deshabilitarBotones(boton1, boton2, boton3, boton4) {
-
         boton1.disabled = true;
         boton2.disabled = true;
         boton3.disabled = true;
@@ -181,7 +180,6 @@ class Preguntas {
 
     //Modulu para darle opacidad a los botones cuando sean clickeados
     OpacityBotones(boton1, boton2, boton3) {
-
         boton1.style.opacity = ".5";
         boton2.style.opacity = ".5";
         boton3.style.opacity = ".5";
@@ -189,14 +187,11 @@ class Preguntas {
 
     //Con este modulo veo si la respuesta es la correcta y si es asi sumo uno al contador
     preguntaCorrecta(opcion) {
-        if (opcion === this.verdadera) {
-            contadorPuntos += 10;
-        }
+        if (opcion === this.verdadera) {contadorPuntos += 10};
         //retorno el valor del contador
         return contadorPuntos;
     }
 }
-
 
 async function obtenerPreguntas() {
     const respuesta = await fetch("preguntas.json");
@@ -224,6 +219,9 @@ async function obtenerPreguntas() {
     const preg35 = new Preguntas(data.preg35.pregunta, data.preg35.opciones, data.preg35.verdadera);
     const preg36 = new Preguntas(data.preg36.pregunta, data.preg36.opciones, data.preg36.verdadera);
     const preg37 = new Preguntas(data.preg37.pregunta, data.preg37.opciones, data.preg37.verdadera);
+    const preg38 = new Preguntas(data.preg38.pregunta, data.preg38.opciones, data.preg38.verdadera);
+    const preg39 = new Preguntas(data.preg39.pregunta, data.preg39.opciones, data.preg39.verdadera);
+
 
     //Paso las pregutnas a las funciones 
     //nvel1
@@ -231,5 +229,5 @@ async function obtenerPreguntas() {
     //lv2
     botonLv2(preg21,preg22,preg23,preg24,preg25,preg26);
     //lv3
-    botonLv3(preg31,preg32,preg33,preg34,preg35,preg36,preg37);
+    botonLv3(preg31,preg32,preg33,preg34,preg35,preg36,preg37,preg38,preg39);
 }

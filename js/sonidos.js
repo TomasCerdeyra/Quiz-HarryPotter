@@ -20,11 +20,10 @@ soundAmb.volume = 0.05;
 //Barra de sonido
 const audio = document.getElementById("audio");
 audio.addEventListener("change", () => {
-    //Digo que cuando detecte un cambio en la barra, el 
-    //volumen d los sonidos va a ser su value
-    sonud.volume = audio.value;
-    sound2.volume = audio.value;
-    soundAmb.volume = audio.value;
+    //pongo el volumen que el usuario ponga en la barra
+    volumen(audio.value);
+
+    sacarPonerButtonsSonido(displayB,displayN)
 })
 
 //icono volumen
@@ -33,11 +32,12 @@ iconoAudio.style.display = "none";
 iconoAudio.addEventListener("click", () => {
     //Cundo se clickee el volumen va a 0 y aparace el icono mute
     audio.value = 0;
-    sonud.volume = 0;
-    sound2.volume = 0;
-    soundAmb.volume = 0;
+    //pongo el volumen en 0
+    volumen(0);
+
     iconoAudioMut.style.display = "block";
     iconoAudio.style.display = "none";
+    sacarPonerButtonsSonido(displayN,displayB);
 })
 
 //icono mute
@@ -46,14 +46,26 @@ iconoAudioMut.addEventListener("click", () => {
     //Cundo se clickee el mute arranca de nuevo la musica y aparace el icono de volumen
     soundAmb.play();
     audio.value = 0.1;
-    sonud.volume = audio.value;
-    sound2.volume = audio.value;
-    soundAmb.volume = audio.value;
+    //pongo el volumen que el usuario ponga en la barra
+    volumen(audio.value)
 
-    iconoAudio.style.display = "block"
-    iconoAudioMut.style.display = "none";
+    sacarPonerButtonsSonido(displayB,displayN);
 
     //saco el mensaje de volumen
     mensaje1.style.display= "none"
     harry2.style.display= "none"
 })
+
+//Funciones GLOBALES de sonidos
+//subir o bajar volumen
+function volumen(voumen) {
+    sonud.volume = voumen;
+    sound2.volume = voumen;
+    soundAmb.volume = voumen;
+    
+}
+
+function sacarPonerButtonsSonido(block,none) {
+    iconoAudio.style.display = block;
+    iconoAudioMut.style.display = none;
+}
