@@ -18,10 +18,10 @@ function introduccion() {
         sacarPonerBotones(displayB);
         botIntro.remove();
         intro.remove();
-        ir.style.display = "none";
 
         //animacion AyB
         animacionAyB();
+        console.log("hhh");
     })
 }
 //funcion para volver a la pantalla inicial del juego(menu)

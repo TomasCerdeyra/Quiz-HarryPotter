@@ -115,7 +115,6 @@ function animacionAyB() {
 
 
 }
-
 //Movimieto de harry2 y mensaje 
 function animacionCyD() {
     gsap.to('.harry2', {
