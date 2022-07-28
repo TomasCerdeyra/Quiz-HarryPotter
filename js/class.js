@@ -221,6 +221,7 @@ async function obtenerPreguntas() {
     const preg37 = new Preguntas(data.preg37.pregunta, data.preg37.opciones, data.preg37.verdadera);
     const preg38 = new Preguntas(data.preg38.pregunta, data.preg38.opciones, data.preg38.verdadera);
     const preg39 = new Preguntas(data.preg39.pregunta, data.preg39.opciones, data.preg39.verdadera);
+    const preg40 = new Preguntas(data.preg40.pregunta, data.preg40.opciones, data.preg40.verdadera);
 
 
     //Paso las pregutnas a las funciones 
@@ -229,5 +230,5 @@ async function obtenerPreguntas() {
     //lv2
     botonLv2(preg21,preg22,preg23,preg24,preg25,preg26);
     //lv3
-    botonLv3(preg31,preg32,preg33,preg34,preg35,preg36,preg37,preg38,preg39);
+    botonLv3(preg31,preg32,preg33,preg34,preg35,preg36,preg37,preg38,preg39,preg40);
 }

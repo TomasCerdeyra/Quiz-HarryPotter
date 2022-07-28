@@ -19,12 +19,12 @@ const primerP = document.getElementById("PrimerPuntaje");
 //P para mostrar la pregunta que va
 const contadorPreg = document.getElementById("contadorPreg");
 //Puntajes maximos
-let puntajeMax1 = -1000;
-let puntajeMax2 = -1000;
-let puntajeMax3 = -1000;
+let puntajeMax1 = 0;
+let puntajeMax2 = 0;
+let puntajeMax3 = 0;
 const preguntasLv1 = 6;
 const preguntasLv2 = 6;
-const preguntasLv3 = 9;
+const preguntasLv3 = 10;
 
 
 //-------------------------------EMPIEZA NIVEL 1---------------------------//
@@ -103,10 +103,10 @@ function nivel1Terminado(click, preg16) {
 //funcio para guardar el puntaje max del nivel3 en local storage
 function guardarPuntaje1(preg16) {
     //guardo en locarStore el puntaje
-    storage = localStorage.setItem("Puntaje",  preg16.preguntaCorrecta());
+    storage = localStorage.setItem("Puntaje1",  preg16.preguntaCorrecta());
 
     //agarro el ultimo puntaje guardado y lo guardo
-    let puntajeLocal = parseInt(localStorage.getItem("Puntaje"));
+    let puntajeLocal = parseInt(localStorage.getItem("Puntaje1"));
 
     // digo que si pntLocal es mayor que pntMax e guarde el valor de local en el de max
     if (puntajeLocal >  puntajeMax1) {puntajeMax1 = puntajeLocal};
@@ -194,10 +194,10 @@ function nivel2Terminado(click2,preg26) {
 //funcio para guardar el puntaje max del nivel2 en local storage
 function guardarPuntaje2(preg26) {
     //guardo en locarStore el puntaje
-    localStorage.setItem("Puntaje",  preg26.preguntaCorrecta());
+    localStorage.setItem("Puntaje2",  preg26.preguntaCorrecta());
 
     //agarro el ultimo puntaje guardado y lo guardo
-    let puntajeLocal = parseInt(localStorage.getItem("Puntaje"));
+    let puntajeLocal = parseInt(localStorage.getItem("Puntaje2"));
 
     // digo que si pntLocal es mayor que pntMax e guarde el valor de local en el de max
     if (puntajeLocal >  puntajeMax2) {puntajeMax2 = puntajeLocal};
@@ -212,7 +212,7 @@ function guardarPuntaje2(preg26) {
 //-------------------------------EMPIEZA NIVEL 3----------------------------//
 
 //funncion para elegir el tercer nivel
-function botonLv3(preg31,preg32,preg33,preg34,preg35,preg36,preg37,preg38,preg39) {
+function botonLv3(preg31,preg32,preg33,preg34,preg35,preg36,preg37,preg38,preg39,preg40) {
     botNivel3.addEventListener("click", () => {
 
         //inicializo la funcion que me muestra el inicio del juego
@@ -228,12 +228,12 @@ function botonLv3(preg31,preg32,preg33,preg34,preg35,preg36,preg37,preg38,preg39
         contadorPreg.innerText= "Pregunta 1 de "+preguntasLv3;
 
         //incicializo la funcion del nivel1 
-        nivel3(preg32,preg33,preg34,preg35,preg36,preg37,preg38,preg39);
+        nivel3(preg32,preg33,preg34,preg35,preg36,preg37,preg38,preg39,preg40);
     });
 }
 
 //Funcion para iniciae juego del nivel3
-function nivel3(preg32,preg33,preg34,preg35,preg36,preg37,preg38,preg39) {
+function nivel3(preg32,preg33,preg34,preg35,preg36,preg37,preg38,preg39,preg40) {
     //variable click para controlas las preguntas que va
     let click3 = 0;
     let contadorDepregunta = 1;
@@ -260,23 +260,24 @@ function nivel3(preg32,preg33,preg34,preg35,preg36,preg37,preg38,preg39) {
         if (click3 == 6) { preg37.MostrarPregunta(); preg37.MostrarOpciones(); }
         if (click3 == 7) { preg38.MostrarPregunta(); preg38.MostrarOpciones(); }
         if (click3 == 8) { preg39.MostrarPregunta(); preg39.MostrarOpciones(); }
+        if (click3 == 9) { preg40.MostrarPregunta(); preg40.MostrarOpciones(); }
 
-        nivel3Terminado(click3,preg39);
+        nivel3Terminado(click3,preg40);
     });
 }
 
 
 //Funcion para mostrar el resultado del nivel3 terminado 
-function nivel3Terminado(click3,preg39) {
-    if (click3 == 9) {
+function nivel3Terminado(click3,preg40) {
+    if (click3 == 10) {
         mostrarPaginaResultados();
 
         //Creo el mensaje para mostrar los puntos que hizo
-        primerP.innerText = " Tu puntaje fue de " + preg39.preguntaCorrecta();
+        primerP.innerText = " Tu puntaje fue de " + preg40.preguntaCorrecta();
         click3 = 0;
 
         //inicializo la funcion para guardar el puntaje en el locaL Storage
-        guardarPuntaje3(preg39);
+        guardarPuntaje3(preg40);
 
         //inicializo la funcion para que aparezca un nuevo voton para volver a jugar
         BotonVolver();
@@ -287,12 +288,12 @@ function nivel3Terminado(click3,preg39) {
 }
 
 //funcio para guardar el puntaje max del nivel3 en local storage
-function guardarPuntaje3(preg39) {
+function guardarPuntaje3(preg40) {
     //guardo en locarStore el puntaje
-    localStorage.setItem("Puntaje",  preg39.preguntaCorrecta());
+    localStorage.setItem("Puntaje3",  preg40.preguntaCorrecta());
 
     //agarro el ultimo puntaje guardado y lo guardo
-    let puntajeLocal = parseInt(localStorage.getItem("Puntaje"));
+    let puntajeLocal = parseInt(localStorage.getItem("Puntaje3"));
 
     // digo que si pntLocal es mayor que pntMax e guarde el valor de local en el de max
     if (puntajeLocal >  puntajeMax3) {puntajeMax3 = puntajeLocal};
@@ -302,6 +303,20 @@ function guardarPuntaje3(preg39) {
 }
 
 //-------------------------------TERMINA NIVEL 3----------------------------//
+function guardarSiempre() {
+    const nivel1 = parseInt(localStorage.getItem(`Puntaje1`));
+    const nivel2 = parseInt(localStorage.getItem(`Puntaje2`));
+    const nivel3 = parseInt(localStorage.getItem(`Puntaje3`));
+    
+    // Guardo siempre el puntaje mas alto
+    if (nivel1 >  puntajeMax1) {puntajeMax1 = nivel1};
+    if (nivel2 >  puntajeMax2) {puntajeMax2 = nivel2};
+    if (nivel3 >  puntajeMax3) {puntajeMax3 = nivel3};
+    //Pitnto los p con el puntaje mas alto
+    puntaje1.innerText = `Tu mayor puntaje nivel Basico: ${puntajeMax1} pts `
+    puntaje2.innerText =`Tu mayor puntaje nivel Intermedio: ${puntajeMax2} pts `
+    puntaje3.innerText =`Tu mayor puntaje nivel Experto: ${puntajeMax3} pts `
+}
 
 
 //Funciones Globales para niveles

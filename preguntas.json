@@ -114,7 +114,14 @@
         "pregunta": "¿Cuál es el Patronus de Luna Lovegood?",
         "opciones":  ["Una liebre", "Un gato", "Una serpiente", "Un leon"],
         "verdadera": "Una liebre"
+    },
+
+    "preg40":{
+        "pregunta": "¿Cómo se llama la mamá de Hagrid?",
+        "opciones":  ["Lily", "Eloise", "Arabella", "Fridwulfa"],
+        "verdadera": "Fridwulfa"
     }
+
 
 
 }

@@ -8,6 +8,7 @@ const botonVolver = document.createElement("button");
 //Boton e div de la intro
 const botIntro = document.getElementById("BotonIntro");
 const intro = document.getElementById("intro");
+const ir = document.getElementById("ir");
 
 //Funcion para mostrar la introduccion y iniciar el juego
 
@@ -17,6 +18,7 @@ function introduccion() {
         sacarPonerBotones(displayB);
         botIntro.remove();
         intro.remove();
+        ir.style.display = "none";
 
         //animacion AyB
         animacionAyB();
@@ -83,5 +85,7 @@ function main() {
     obtenerPreguntas();
     //Animacion de mensaje 
     animacionCyD();
+    //Guardo los puntajes en el rank
+    guardarSiempre();
 }
 main();
