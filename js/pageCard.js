@@ -6,7 +6,7 @@ const button = document.getElementById("button")
 
 //llamo a la api
 async function api() {
-    const respuesta = await fetch(`http://hp-api.herokuapp.com/api/characters`);
+    const respuesta = await fetch(`https://hp-api.herokuapp.com/api/characters`);
     const data = await respuesta.json();
 
     const persona =  data[Math.floor(Math.random() * (0,30))];
